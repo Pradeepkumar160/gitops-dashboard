@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 15%;
+    --card-foreground: 213 31% 91%;
+    --popover: 222 47% 15%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 189 100% 42%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 271 76% 53%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 215 25% 35%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 330 81% 60%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 217 33% 27%;
+    --input: 217 33% 27%;
+    --ring: 189 100% 42%;
+    --radius: 0.5rem;
+  }
+
+  * { border-color: hsl(var(--border)); }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", sans-serif;
+  }
+
+  code { font-family: "JetBrains Mono", monospace; }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(to right, #22d3ee, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .badge-success { background-color: rgba(34,197,94,.1); color: #4ade80; box-shadow: 0 0 0 1px rgba(34,197,94,.3); }
+  .badge-warning { background-color: rgba(251,146,60,.1); color: #fb923c; box-shadow: 0 0 0 1px rgba(251,146,60,.3); }
+  .badge-error   { background-color: rgba(239,68,68,.1);  color: #f87171; box-shadow: 0 0 0 1px rgba(239,68,68,.3); }
+  .badge-info    { background-color: rgba(59,130,246,.1);  color: #60a5fa; box-shadow: 0 0 0 1px rgba(59,130,246,.3); }
+}
+
+@layer utilities {
+  @keyframes fade-in  { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes scale-in { from { transform:scale(.95); opacity:0; }      to { transform:scale(1);   opacity:1; } }
+  .animate-fade-in  { animation: fade-in .3s ease-out; }
+  .animate-scale-in { animation: scale-in .3s ease-out; }
+}
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }

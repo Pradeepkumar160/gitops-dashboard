@@ -1,0 +1,28 @@
+{
+  "name": "gitops-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n client,server -c cyan,magenta \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && vite",
+    "dev:server": "cd server && tsx watch src/index.ts",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && vite build",
+    "build:server": "cd server && tsc",
+    "start": "node server/dist/index.js",
+    "db:push": "cd server && drizzle-kit push",
+    "db:generate": "cd server && drizzle-kit generate",
+    "db:studio": "cd server && drizzle-kit studio",
+    "lint": "eslint . --ext ts,tsx",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2"
+  }
+}

@@ -1,4 +1,4 @@
-# 🚀 GitOps Dashboard
+# 🚀 GitOps Dashboard 
 
 <div align="center">
 
